@@ -75,6 +75,7 @@
     <Compile Include="Abstract\IInstrumentRepository.cs" />
     <Compile Include="Concrete\InstrumentRepository.cs" />
     <Compile Include="Concrete\MusicStoreContext.cs" />
+    <Compile Include="Entities\Cart.cs" />
     <Compile Include="Entities\Instrument.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
