@@ -49,8 +49,32 @@ namespace MusicStore.Domain.Entities
         {
             get { return lineCollection; }
         }
+
+        public List<Instrument> GetInstruments()
+        {
+            List<Instrument> instruments = new List<Instrument>();
+
+            foreach(CartLine cartLine in lineCollection)
+            {
+                instruments.Add(cartLine.Instrument);
+            }
+
+            return instruments;
+        }
+        public int CountInstrument(Instrument instrument)
+        {
+            foreach(CartLine cartLine in lineCollection){
+                if (cartLine.Instrument.InstrumentId==instrument.InstrumentId)
+                {
+                    return cartLine.Quantity;
+                }
+            }
+
+            return 0;
+        }
     }
 
+    
     public class CartLine
     {
         public Instrument Instrument { get; set; }

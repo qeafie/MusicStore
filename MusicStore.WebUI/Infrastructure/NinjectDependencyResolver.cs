@@ -8,6 +8,8 @@ using System.Web.Mvc;
 using MusicStore.Domain.Abstract;
 using MusicStore.Domain.Entities;
 using MusicStore.Domain.Concrete;
+using MusicStore.WebUI.Infrastructure.Abstract;
+using MusicStore.WebUI.Infrastructure.Concrete;
 
 namespace MusicStore.WebUI.Infrastructure
 {
@@ -37,6 +39,7 @@ namespace MusicStore.WebUI.Infrastructure
 
 
             kernel.Bind<IInstrumentRepository>().To<InstrumentRepository>();
+            kernel.Bind<IAuthProvider>().To<FormAuthProvider>();
         }
     }
 }

@@ -72,16 +72,72 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Abstract\IShippingDetailsRepository.cs" />
     <Compile Include="Abstract\IInstrumentRepository.cs" />
+    <Compile Include="Abstract\IOrderProcessor.cs" />
     <Compile Include="Concrete\InstrumentRepository.cs" />
     <Compile Include="Concrete\MusicStoreContext.cs" />
+    <Compile Include="Concrete\ShippingOrders.cs" />
     <Compile Include="Entities\Cart.cs" />
     <Compile Include="Entities\Instrument.cs" />
+    <Compile Include="Entities\ShippingDetails.cs" />
+    <Compile Include="Migrations\202205082025387_InitialCreate.cs" />
+    <Compile Include="Migrations\202205082025387_InitialCreate.designer.cs">
+      <DependentUpon>202205082025387_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202205181315308_AddInstrumentMigration.cs" />
+    <Compile Include="Migrations\202205181315308_AddInstrumentMigration.designer.cs">
+      <DependentUpon>202205181315308_AddInstrumentMigration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202205201924047_AddShippingDetailsMigration.cs" />
+    <Compile Include="Migrations\202205201924047_AddShippingDetailsMigration.designer.cs">
+      <DependentUpon>202205201924047_AddShippingDetailsMigration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202205210618472_MusicStoreContextMigration.cs" />
+    <Compile Include="Migrations\202205210618472_MusicStoreContextMigration.designer.cs">
+      <DependentUpon>202205210618472_MusicStoreContextMigration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202205210652025_newRelation.cs" />
+    <Compile Include="Migrations\202205210652025_newRelation.designer.cs">
+      <DependentUpon>202205210652025_newRelation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202205210657085_InstrumentRefactored.cs" />
+    <Compile Include="Migrations\202205210657085_InstrumentRefactored.designer.cs">
+      <DependentUpon>202205210657085_InstrumentRefactored.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202205231738183_AddConstraints.cs" />
+    <Compile Include="Migrations\202205231738183_AddConstraints.designer.cs">
+      <DependentUpon>202205231738183_AddConstraints.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202205082025387_InitialCreate.resx">
+      <DependentUpon>202205082025387_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202205181315308_AddInstrumentMigration.resx">
+      <DependentUpon>202205181315308_AddInstrumentMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202205201924047_AddShippingDetailsMigration.resx">
+      <DependentUpon>202205201924047_AddShippingDetailsMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202205210618472_MusicStoreContextMigration.resx">
+      <DependentUpon>202205210618472_MusicStoreContextMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202205210652025_newRelation.resx">
+      <DependentUpon>202205210652025_newRelation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202205210657085_InstrumentRefactored.resx">
+      <DependentUpon>202205210657085_InstrumentRefactored.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202205231738183_AddConstraints.resx">
+      <DependentUpon>202205231738183_AddConstraints.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

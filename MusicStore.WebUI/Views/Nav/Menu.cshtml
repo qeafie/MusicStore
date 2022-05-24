@@ -16,3 +16,5 @@
         @class = "btn btn-block btn-default btn-lg" + (link == ViewBag.SelectedCategory ? " btn-primary" : "")
     })
 }
+@Html.ActionLink("Админ. панель", "Login", "Account", null,
+    new { @class = "btn btn-block btn-default btn-lg" })

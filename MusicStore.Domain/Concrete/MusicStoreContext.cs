@@ -8,8 +8,9 @@ using System.Threading.Tasks;
 
 namespace MusicStore.Domain.Concrete
 {
-    class MusicStoreContext :DbContext
+    public class MusicStoreContext :DbContext
     {
         public DbSet<Instrument> Instruments { get; set; }
+        public DbSet<ShippingDetails> ShippingDetails { get; set; }
     }
 }
