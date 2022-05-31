@@ -88,11 +88,24 @@ namespace MusicStore.WebUI.Controllers
             if (ModelState.IsValid)
             {
                 //добавления заказа в базу данных
-                //shippingDetails.instruments.Add(cart.GetInstruments());
-                MusicStoreContext.ShippingDetails.Add(shippingDetails);
+
+
+                //
+               //shippingDetails.instruments.AddRange(cart.GetInstruments());
+
+                foreach (Instrument instrument in cart.GetInstruments()) {                
+                    instrument.ShippingDetails.Add(shippingDetails);
+                    shippingDetails.instruments.Add(MusicStoreContext.Instruments.Attach(instrument));
+                    MusicStoreContext.ShippingDetails.Add(shippingDetails);                 
+                }
                 MusicStoreContext.SaveChanges();
-                
-                foreach(CartLine cartLine in cart.Lines)
+
+                //
+                //shippingDetails.instruments.AddRange(cart.GetInstruments());
+                //MusicStoreContext.ShippingDetails.Add(shippingDetails);
+                //MusicStoreContext.SaveChanges();
+
+                foreach (CartLine cartLine in cart.Lines)
                 {
                     MusicStoreContext.Instruments.
                         Where(i => i.InstrumentId == cartLine.Instrument.InstrumentId).

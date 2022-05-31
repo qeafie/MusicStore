@@ -138,6 +138,7 @@
     <Compile Include="Controllers\CartController.cs" />
     <Compile Include="Controllers\InstrumentController.cs" />
     <Compile Include="Controllers\NavController.cs" />
+    <Compile Include="Controllers\ShippingDetailsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -171,6 +172,11 @@
     <Content Include="Views\Admin\Edit.cshtml" />
     <Content Include="Views\Admin\Index.cshtml" />
     <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\ShippingDetails\Create.cshtml" />
+    <Content Include="Views\ShippingDetails\Delete.cshtml" />
+    <Content Include="Views\ShippingDetails\Details.cshtml" />
+    <Content Include="Views\ShippingDetails\Edit.cshtml" />
+    <Content Include="Views\ShippingDetails\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

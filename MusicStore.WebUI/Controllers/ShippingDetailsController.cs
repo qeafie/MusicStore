@@ -11,110 +11,107 @@ using MusicStore.Domain.Entities;
 
 namespace MusicStore.WebUI.Controllers
 {
-    public class AdminController : Controller
+    public class ShippingDetailsController : Controller
     {
         private MusicStoreContext db = new MusicStoreContext();
 
-        // GET: Admin
+        // GET: ShippingDetails
         public ActionResult Index()
         {
-            return View(db.Instruments.ToList());
+            return View(db.ShippingDetails.ToList());
         }
 
-        // GET: Admin/Details/5
+        // GET: ShippingDetails/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Instrument instrument = db.Instruments.Find(id);
-            if (instrument == null)
+            ShippingDetails shippingDetails = db.ShippingDetails.Find(id);
+            if (shippingDetails == null)
             {
                 return HttpNotFound();
             }
-            return View(instrument);
+            return View(shippingDetails);
         }
 
-        // GET: Admin/Create
+        // GET: ShippingDetails/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: Admin/Create
+        // POST: ShippingDetails/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "InstrumentId,Name,Description,Category,Price,Quantity")] Instrument instrument)
+        public ActionResult Create([Bind(Include = "ShippingDetailsId,Name,PhoneNumber,Email,Line1,City,Country")] ShippingDetails shippingDetails)
         {
             if (ModelState.IsValid)
             {
-                db.Instruments.Add(instrument);
+                db.ShippingDetails.Add(shippingDetails);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(instrument);
+            return View(shippingDetails);
         }
 
-        // GET: Admin/Edit/5
+        // GET: ShippingDetails/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Instrument instrument = db.Instruments.Find(id);
-            if (instrument == null)
+            ShippingDetails shippingDetails = db.ShippingDetails.Find(id);
+            if (shippingDetails == null)
             {
                 return HttpNotFound();
             }
-            return View(instrument);
+            return View(shippingDetails);
         }
 
-        // POST: Admin/Edit/5
+        // POST: ShippingDetails/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "InstrumentId,Name,Description,Category,Price,Quantity,IsDeleted")] Instrument instrument)
+        public ActionResult Edit([Bind(Include = "ShippingDetailsId,Name,PhoneNumber,Email,Line1,City,Country")] ShippingDetails shippingDetails)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(instrument).State = EntityState.Modified;
+                db.Entry(shippingDetails).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(instrument);
+            return View(shippingDetails);
         }
 
-        // GET: Admin/Delete/5
+        // GET: ShippingDetails/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Instrument instrument = db.Instruments.Find(id);
-            if (instrument == null)
+            ShippingDetails shippingDetails = db.ShippingDetails.Find(id);
+            if (shippingDetails == null)
             {
                 return HttpNotFound();
             }
-            return View(instrument);
+            return View(shippingDetails);
         }
 
-        // POST: Admin/Delete/5
+        // POST: ShippingDetails/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            //Instrument instrument = db.Instruments.Find(id);
-           // instrument.IsDeleted = true;
-            //db.Instruments.Remove(instrument);
-
-            db.Instruments.Find(id).IsDeleted = true;
+            ShippingDetails shippingDetails = db.ShippingDetails.Find(id);
+            db.ShippingDetails.Remove(shippingDetails);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

@@ -109,6 +109,22 @@
     <Compile Include="Migrations\202205231738183_AddConstraints.designer.cs">
       <DependentUpon>202205231738183_AddConstraints.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202205271908525_RefacroredInstrument.cs" />
+    <Compile Include="Migrations\202205271908525_RefacroredInstrument.designer.cs">
+      <DependentUpon>202205271908525_RefacroredInstrument.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202205311044416_RemoveCascadeDelete.cs" />
+    <Compile Include="Migrations\202205311044416_RemoveCascadeDelete.designer.cs">
+      <DependentUpon>202205311044416_RemoveCascadeDelete.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202205311158551_AddRelationBetweenShippingOrdersAndInstrument.cs" />
+    <Compile Include="Migrations\202205311158551_AddRelationBetweenShippingOrdersAndInstrument.designer.cs">
+      <DependentUpon>202205311158551_AddRelationBetweenShippingOrdersAndInstrument.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202205311218118_UpdateRelationBetweenShipDetAndInst.cs" />
+    <Compile Include="Migrations\202205311218118_UpdateRelationBetweenShipDetAndInst.designer.cs">
+      <DependentUpon>202205311218118_UpdateRelationBetweenShipDetAndInst.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -137,6 +153,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202205231738183_AddConstraints.resx">
       <DependentUpon>202205231738183_AddConstraints.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202205271908525_RefacroredInstrument.resx">
+      <DependentUpon>202205271908525_RefacroredInstrument.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202205311044416_RemoveCascadeDelete.resx">
+      <DependentUpon>202205311044416_RemoveCascadeDelete.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202205311158551_AddRelationBetweenShippingOrdersAndInstrument.resx">
+      <DependentUpon>202205311158551_AddRelationBetweenShippingOrdersAndInstrument.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202205311218118_UpdateRelationBetweenShipDetAndInst.resx">
+      <DependentUpon>202205311218118_UpdateRelationBetweenShipDetAndInst.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

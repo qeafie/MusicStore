@@ -8,8 +8,12 @@
 
 @foreach (var p in @Model.Instruments)
 {
-    @Html.Partial("InstrumentSummary", p)
+    if (!p.IsDeleted)
+    {
+        @Html.Partial("InstrumentSummary", p)
+    }
 }
+
 
 <div class="btn-group pull-right">
     @Html.PageLinks(Model.PagingInfo,

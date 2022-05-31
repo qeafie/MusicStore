@@ -13,8 +13,17 @@ namespace MusicStore.Domain.Entities
         public int ShippingDetailsId { get; set; }
 
         [Required(ErrorMessage = "Укажите как вас зовут")]
-        [Display(Name = "Имя")]
+        [Display(Name = "Фамилия Имя Отчество")]
         public string Name { get; set; }
+
+        [Required(ErrorMessage = "Укажите ваш номер")]
+        [Display(Name = "Номер телефона")]
+        public string PhoneNumber { get; set; }
+
+        [Required(ErrorMessage = "Некоректный email")]
+        [RegularExpression(@"([a-zA-z])(.+)([a-zA-z])@((g)?mail|yahoo|rambler|yandex|ya)[\.](ru|com)$", ErrorMessage = "Некоректный email")]
+        [Display(Name ="Email")]
+        public string Email { get; set; }
 
         [Required(ErrorMessage = "Вставьте адрес доставки")]
         [Display(Name = "Адрес")]
@@ -28,8 +37,14 @@ namespace MusicStore.Domain.Entities
         [Display(Name = "Страна")]
         public string Country { get; set; }
 
-        public bool GiftWrap { get; set; }
 
+        [Display(Name = "Инструменты:")]
         public List<Instrument> instruments { get; set; }
+
+        public ShippingDetails()
+        {
+            instruments = new List<Instrument>();
+        }
+
     }
 }

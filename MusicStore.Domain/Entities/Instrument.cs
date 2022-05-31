@@ -32,5 +32,16 @@ namespace MusicStore.Domain.Entities
         [Display(Name = "Количество")]
         [Range(0, int.MaxValue, ErrorMessage = "Пожалуйста, введите положительное значение для количества")]
         public int Quantity { get; set; }
+
+        [Display(Name = "Товар удалён?")]
+        public bool IsDeleted { get; set; } = false;
+
+
+        public List<ShippingDetails> ShippingDetails { get; set; } 
+
+        public Instrument()
+        {
+            ShippingDetails = new List<ShippingDetails>();
+        }
     }
 }

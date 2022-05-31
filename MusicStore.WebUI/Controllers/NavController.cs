@@ -20,7 +20,8 @@ namespace MusicStore.WebUI.Controllers
             ViewBag.SelectedCategory = category;
 
             IEnumerable<string> categories = repository.Instruments
-               .Select(game => game.Category)
+               .Where(instrument => instrument.IsDeleted == false)
+               .Select(instrument => instrument.Category)              
                .Distinct()
                .OrderBy(x => x);
             return PartialView(categories);
