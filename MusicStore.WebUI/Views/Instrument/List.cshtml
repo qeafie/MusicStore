@@ -8,7 +8,7 @@
 
 @foreach (var p in @Model.Instruments)
 {
-    if (!p.IsDeleted)
+    if (!p.IsDeleted && p.Quantity>0)
     {
         @Html.Partial("InstrumentSummary", p)
     }

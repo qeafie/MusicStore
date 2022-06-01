@@ -38,12 +38,16 @@ namespace MusicStore.Domain.Entities
         public string Country { get; set; }
 
 
-        [Display(Name = "Инструменты:")]
-        public List<Instrument> instruments { get; set; }
+        //[Display(Name = "Инструменты:")]
+        //public List<Instrument> instruments { get; set; }
+
+        public List<Order> Orders { get; set; }
 
         public ShippingDetails()
         {
-            instruments = new List<Instrument>();
+            // instruments = new List<Instrument>();
+
+            Orders = new List<Order>();
         }
 
     }

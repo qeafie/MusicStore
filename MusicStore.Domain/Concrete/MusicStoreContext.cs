@@ -12,5 +12,6 @@ namespace MusicStore.Domain.Concrete
     {
         public DbSet<Instrument> Instruments { get; set; }
         public DbSet<ShippingDetails> ShippingDetails { get; set; }
+        public DbSet<Order> Orders { get; set; }
     }
 }

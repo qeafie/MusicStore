@@ -72,14 +72,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Abstract\IOrderRepository.cs" />
     <Compile Include="Abstract\IShippingDetailsRepository.cs" />
     <Compile Include="Abstract\IInstrumentRepository.cs" />
     <Compile Include="Abstract\IOrderProcessor.cs" />
     <Compile Include="Concrete\InstrumentRepository.cs" />
     <Compile Include="Concrete\MusicStoreContext.cs" />
+    <Compile Include="Concrete\OrderRepository.cs" />
     <Compile Include="Concrete\ShippingOrders.cs" />
     <Compile Include="Entities\Cart.cs" />
     <Compile Include="Entities\Instrument.cs" />
+    <Compile Include="Entities\Order.cs" />
     <Compile Include="Entities\ShippingDetails.cs" />
     <Compile Include="Migrations\202205082025387_InitialCreate.cs" />
     <Compile Include="Migrations\202205082025387_InitialCreate.designer.cs">
@@ -125,6 +128,14 @@
     <Compile Include="Migrations\202205311218118_UpdateRelationBetweenShipDetAndInst.designer.cs">
       <DependentUpon>202205311218118_UpdateRelationBetweenShipDetAndInst.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202206011242142_Add OrderList.cs" />
+    <Compile Include="Migrations\202206011242142_Add OrderList.designer.cs">
+      <DependentUpon>202206011242142_Add OrderList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202206011430014_addNameOrder.cs" />
+    <Compile Include="Migrations\202206011430014_addNameOrder.designer.cs">
+      <DependentUpon>202206011430014_addNameOrder.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -165,6 +176,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202205311218118_UpdateRelationBetweenShipDetAndInst.resx">
       <DependentUpon>202205311218118_UpdateRelationBetweenShipDetAndInst.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202206011242142_Add OrderList.resx">
+      <DependentUpon>202206011242142_Add OrderList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202206011430014_addNameOrder.resx">
+      <DependentUpon>202206011430014_addNameOrder.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

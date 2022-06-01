@@ -21,6 +21,7 @@ namespace MusicStore.WebUI.Controllers
 
             IEnumerable<string> categories = repository.Instruments
                .Where(instrument => instrument.IsDeleted == false)
+               .Where(instrument => instrument.Quantity >0)
                .Select(instrument => instrument.Category)              
                .Distinct()
                .OrderBy(x => x);

@@ -29,11 +29,12 @@ namespace MusicStore.WebUI.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             ShippingDetails shippingDetails = db.ShippingDetails.Find(id);
+
             if (shippingDetails == null)
             {
                 return HttpNotFound();
             }
-            return View(shippingDetails);
+            return View(db.Orders.Where(x => x.ShippingDetailsId == shippingDetails.ShippingDetailsId).ToList());
         }
 
         // GET: ShippingDetails/Create

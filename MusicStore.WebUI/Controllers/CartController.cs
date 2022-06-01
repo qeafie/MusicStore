@@ -91,15 +91,41 @@ namespace MusicStore.WebUI.Controllers
 
 
                 //
-               //shippingDetails.instruments.AddRange(cart.GetInstruments());
+                //shippingDetails.instruments.AddRange(cart.GetInstruments());
 
-                foreach (Instrument instrument in cart.GetInstruments()) {                
-                    instrument.ShippingDetails.Add(shippingDetails);
-                    shippingDetails.instruments.Add(MusicStoreContext.Instruments.Attach(instrument));
-                    MusicStoreContext.ShippingDetails.Add(shippingDetails);                 
-                }
+
+                //прошлая версия
+                //foreach (Instrument instrument in cart.GetInstruments()) {                
+                //    instrument.ShippingDetails.Add(shippingDetails);
+                //    shippingDetails.instruments.Add(MusicStoreContext.Instruments.Attach(instrument));
+                //    MusicStoreContext.ShippingDetails.Add(shippingDetails);                 
+                //}
+
+                MusicStoreContext.SaveChanges();
+                MusicStoreContext.ShippingDetails.Add(shippingDetails);
                 MusicStoreContext.SaveChanges();
 
+                foreach (Instrument instrument in cart.GetInstruments())
+                {
+                    Order order = new Order
+                    {
+                        Instrument = MusicStoreContext.Instruments.Find(instrument.InstrumentId),
+                        //ShippingDetails = shippingDetails,
+                        ShippingDetails = MusicStoreContext.ShippingDetails.Attach(shippingDetails),
+                        Quantity = cart.CountInstrument(instrument),
+                        Name = instrument.Name,
+                        //InstrumentId = instrument.InstrumentId,
+                        //ShippingDetailsId = shippingDetails.ShippingDetailsId
+                    };
+                    MusicStoreContext.Orders.Add(order);
+                   // shippingDetails.Orders.Add(MusicStoreContext.Orders.Attach(order));                    
+                }
+                
+
+                MusicStoreContext.SaveChanges();
+
+
+                
                 //
                 //shippingDetails.instruments.AddRange(cart.GetInstruments());
                 //MusicStoreContext.ShippingDetails.Add(shippingDetails);
